@@ -1,5 +1,6 @@
 package com.codewithsimo.service;
 
+import com.codewithsimo.enums.FruitCategory;
 import com.codewithsimo.model.Fruit;
 
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ public class FruitService {
     private final List<Fruit> fruitList = new ArrayList<>();
     private int nextId = 1;
 
-    public Fruit addFruit(String name, double price, int quantity, String category) {
+    public Fruit addFruit(String name, double price, int quantity, FruitCategory category) {
         Fruit fruit = new Fruit(nextId, name, price, quantity, category);
         fruitList.add(fruit);
         nextId++;
@@ -27,19 +28,29 @@ public class FruitService {
                 return fruit;
             }
         }
-      return null;
+        return null;
     }
 
-    public boolean updateFruit(int id , String name, double price,int quantity,String category) {
-        for (Fruit fruit : fruitList) {
-            if (fruit.getId() == id) {
-                fruit.setName(name);
-                fruit.setPrice(price);
-                fruit.setQuantity(quantity);
-                fruit.setCategory(category);
-                return true;
-            }
+    public boolean updateFruit(int id, String name, double price, int quantity, FruitCategory category) {
+
+        Fruit fruit = getFruitById(id);
+        if (fruit == null) {
+            return false;
         }
-        return false;
+        fruit.setName(name);
+        fruit.setPrice(price);
+        fruit.setQuantity(quantity);
+        fruit.setCategory(category);
+        return true;
     }
+
+    public boolean deleteFruit(int id) {
+        Fruit fruit = getFruitById(id);
+        if (fruit == null) {
+            return false;
+        }
+        fruitList.remove(fruit);
+        return true;
+    }
+
 }

@@ -1,17 +1,36 @@
 package com.codewithsimo;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import com.codewithsimo.enums.FruitCategory;
+import com.codewithsimo.model.Fruit;
+import com.codewithsimo.service.FruitService;
+
 public class Main {
     static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+        FruitService fruitService = new FruitService();
+        fruitService.addFruit("Apple", 2.50, 30, FruitCategory.POME_FRUIT);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+        fruitService.addFruit("Pear", 2.00, 20, FruitCategory.POME_FRUIT);
+
+        fruitService.addFruit("Orange", 1.80, 40, FruitCategory.CITRUS);
+
+        fruitService.addFruit("Lemon", 1.50, 25, FruitCategory.CITRUS);
+
+        fruitService.addFruit("Mango", 3.50, 15, FruitCategory.TROPICAL);
+
+        fruitService.addFruit("Pineapple", 4.00, 10, FruitCategory.TROPICAL);
+
+        fruitService.addFruit("Strawberry", 3.00, 35, FruitCategory.BERRY);
+
+        fruitService.addFruit("Blueberry", 4.50, 20, FruitCategory.BERRY);
+
+        fruitService.addFruit("Peach", 2.80, 18, FruitCategory.STONE_FRUIT);
+
+        fruitService.addFruit("Cherry", 5.00, 12, FruitCategory.STONE_FRUIT);
+
+        for(Fruit fruit : fruitService.getAllFruits()){
+            System.out.println(fruit);
         }
+
+
     }
 }

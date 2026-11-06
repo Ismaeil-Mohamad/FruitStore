@@ -1,13 +1,15 @@
 package com.codewithsimo.model;
 
+import com.codewithsimo.enums.FruitCategory;
+
 public class Fruit {
     private int id;
     private String name;
     private double price;
     private int quantity;
-    private String category;
+    private FruitCategory category;
 
-    public Fruit(int id, String name, double price, int quantity, String category) {
+    public Fruit(int id, String name, double price, int quantity, FruitCategory category) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -47,11 +49,11 @@ public class Fruit {
         this.quantity = quantity;
     }
 
-    public String getCategory() {
+    public FruitCategory getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(FruitCategory category) {
         this.category = category;
     }
 
@@ -62,7 +64,7 @@ public class Fruit {
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", quantity=" + quantity +
-                ", category='" + category + '\'' +
+                ", category=" + category +
                 '}';
     }
 }
