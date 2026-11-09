@@ -33,15 +33,22 @@ public class Main {
             System.out.println(fruit);
         }
 
-        System.out.println("---------------------------------");
-        Fruit fruit = fruitService.getFruitByName("PEAR");
+        System.out.println("--------------- getFruitByName ------------------");
+        Fruit fruit = fruitService.getFruitByName("Peach");
         System.out.println(fruit);
 
-        System.out.println("---------------------------------");
+        System.out.println("---------------- getFruitByPrice -----------------");
          List<Fruit> fruit1 = fruitService.getFruitByPrice(2);
          for(Fruit fruit2 : fruit1){
              System.out.println(fruit2);
          }
+
+        System.out.println("---------------- getFruitsByQuantity -----------------");
+         List<Fruit> fruit3 = fruitService.getFruitsByQuantity(20);
+         for (Fruit fruitNew : fruit3){
+             System.out.println(fruitNew);
+         }
+
 
 
     }
