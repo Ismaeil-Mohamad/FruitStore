@@ -59,12 +59,12 @@ public class Fruit {
 
     @Override
     public String toString() {
-        return "Fruit{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                ", category=" + category +
+        return "Fruit {" +
+                "id = " + id +
+                ", name = '" + name + '\'' +
+                ", price = " + price +
+                ", quantity = " + quantity +
+                ", category = " + category +
                 '}';
     }
 }

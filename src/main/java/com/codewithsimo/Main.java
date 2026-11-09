@@ -4,6 +4,8 @@ import com.codewithsimo.enums.FruitCategory;
 import com.codewithsimo.model.Fruit;
 import com.codewithsimo.service.FruitService;
 
+import java.util.List;
+
 public class Main {
     static void main() {
         FruitService fruitService = new FruitService();
@@ -30,6 +32,16 @@ public class Main {
         for(Fruit fruit : fruitService.getAllFruits()){
             System.out.println(fruit);
         }
+
+        System.out.println("---------------------------------");
+        Fruit fruit = fruitService.getFruitByName("PEAR");
+        System.out.println(fruit);
+
+        System.out.println("---------------------------------");
+         List<Fruit> fruit1 = fruitService.getFruitByPrice(2);
+         for(Fruit fruit2 : fruit1){
+             System.out.println(fruit2);
+         }
 
 
     }

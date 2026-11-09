@@ -52,5 +52,16 @@ public class FruitService {
         fruitList.remove(fruit);
         return true;
     }
+    public Fruit getFruitByName(String name){
+        return fruitList.stream()
+                .filter(e->e.getName().equalsIgnoreCase(name))
+                .findFirst()
+                .orElse(null);
+    }
 
+public List<Fruit> getFruitByPrice(double price){
+        return fruitList.stream()
+                .filter(e-> e.getPrice() >= price)
+                .toList();
+}
 }
