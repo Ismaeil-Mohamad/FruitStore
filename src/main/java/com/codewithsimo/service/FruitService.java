@@ -64,4 +64,10 @@ public List<Fruit> getFruitByPrice(double price){
                 .filter(e-> e.getPrice() >= price)
                 .toList();
 }
+public List<Fruit>getFruitsByQuantity(int quantity){
+        return  fruitList.stream()
+                .filter(e-> e.getQuantity()>quantity)
+                .toList();
+}
+
 }
